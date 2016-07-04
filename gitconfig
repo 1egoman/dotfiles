@@ -1,0 +1,11 @@
+[user]
+	name = 1egoman
+	email = rsg1egoman@gmail.com
+[color]
+	ui = auto
+[core]
+	editor = vim
+
+[gitflow "branch"]
+	develop = dev
+

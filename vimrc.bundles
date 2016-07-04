@@ -1,0 +1,62 @@
+" My Bundles
+" many from vormwald/dotfiles
+
+Bundle 'kien/ctrlp.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tomasr/molokai'
+
+" cs<' -> <hello> to 'hello'
+Bundle 'tpope/vim-surround' 
+Bundle 'vim-scripts/tComment'
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-haml'
+Bundle 'Xuyuanp/nerdtree-git-plugin'
+Bundle 'nathanaelkane/vim-indent-guides'
+
+Bundle 'bling/vim-airline'
+" Enable the list of buffers
+" let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+" let g:airline#extensions#tabline#fnamemod = ':t'
+
+Bundle 'qpkorr/vim-bufkill'
+Bundle 'rking/ag.vim'
+
+" gitgutter shows a bar on the left of the editor
+" for git +, -, or ~ (edits)
+Bundle 'airblade/vim-gitgutter'
+let g:gitgutter_sign_column_always = 1
+nmap <Leader>ss <Plug>GitGutterStageHunk
+nmap <Leader>rr <Plug>GitGutterRevertHunk
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+let g:gitgutter_map_keys = 0
+
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-session'
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
+
+" use <tab> to open the ctrl-n autocomplete menu
+Bundle 'ervandew/supertab'
+
+Bundle 'jiangmiao/auto-pairs'
+
+" elixir syntax
+Bundle 'elixir-lang/vim-elixir'
+
+" shows bar on left for marks
+Bundle 'kshenoy/vim-signature'
+
+" jsx syntax highlighting
+Plugin 'pangloss/vim-javascript'
+Bundle 'mxw/vim-jsx'
+
+" bracket matching
+Bundle 'tpope/vim-unimpaired'
+
+" close html tags for me
+Bundle 'alvan/vim-closetag'
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.js"
