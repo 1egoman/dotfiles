@@ -121,7 +121,7 @@ autocmd BufWinEnter ?* silent loadview
 " ------------------------------------------------------------------------------
 
 " quickly source vimrc
-nnoremap <leader>ev :e ~/setup/dotfiles/vimrc<cr><C-w>l
+nnoremap <leader>ev :e ~/.vimrc<cr><C-w>l :sp ~/.vimrc.bundles<cr>
 nnoremap <leader>sv :!cp ~/setup/dotfiles/vimrc ~/.vimrc<cr>:!cp ~/setup/dotfiles/vimrc.bundles ~/.vimrc.bundles<cr>:source ~/.vimrc<cr>:echo "copied and sourced from ~/.vimrc and ~/.vimrc.bundles"<cr>
 
 
@@ -188,7 +188,6 @@ nnoremap <C-b> :CtrlPBuffer<CR>
 " ------------------------------------------------------------------------------
 " NERDTree
 " ------------------------------------------------------------------------------
-" nnoremap <leader>kb :NERDTreeToggle<cr>
 let g:NERDTreeWinSize=31
 let g:indent_guides_auto_colors = 0
 
@@ -280,8 +279,8 @@ iab cahnges changes
 " ------------------------------------------------------------------------------
 " Toggles
 " ------------------------------------------------------------------------------
-nmap <F3> :set paste!<CR>
-map <F5> :set spell!<CR>
+nnoremap <F3> :set paste!<CR>
+nnoremap cop :set paste!<CR>
 
 " ------------------------------------------------------------------------------
 " easily create comment headers like these
@@ -297,10 +296,6 @@ vnoremap <leader>bb <S-I><esc>O<esc>78i-<esc>gv<S-A><esc>o<esc>78i-<esc>gvkoj
 " increment / decrement
 nnoremap <leader>j <C-x>
 nnoremap <leader>k <C-a>
-
-" coffeescript auto-compile
-vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
-map <leader>c :CoffeeCompile<CR>
 
 " Make Y act like other capital letters
 nnoremap Y y$
