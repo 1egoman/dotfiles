@@ -108,7 +108,13 @@ alias sshnas="ssh ryan@cname.rgaus.net -p 8022"
 alias sshn="sshnas"
 
 # open a file/folder with o
-alias o="xdg-open"
+if [[ -n $(which xdg-open) ]]; then
+  alias o="xdg-open"
+else
+  alias o="open"
+fi
+alias o.="o ."
+
 
 #
 # This is a simple, clean PS1 with current git branch displayed.
