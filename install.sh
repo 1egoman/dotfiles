@@ -15,7 +15,13 @@ for filename in *; do
 
     # should we delete an old version of the dotfile?
     if [[ -f "$HOME/.$filename" ]]; then
-      read -p "Dotfile .$filename already exists. Should we replace it? " yn
+      if [[ "$1" == "--force" ]]; then
+        yn="y"
+      else
+        read -p "Dotfile .$filename already exists. Should we replace it? " yn
+      fi
+
+      # check the answer
       case $yn in
         [yY]* )
           rm $HOME/.$filename; # delete the old dotfile
