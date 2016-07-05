@@ -15,8 +15,10 @@ for filename in *; do
 
     # should we delete an old version of the dotfile?
     if [[ -f "$HOME/.$filename" ]]; then
-      if [[ "$1" == "--force" ]]; then
+      if [[ "$1" == "--force" ]] || [[ "$1" == "--yes" ]]; then
         yn="y"
+      elif [[ "$1" == "--no" ]]; then
+        yn="n"
       else
         read -p "Dotfile .$filename already exists. Should we replace it? " yn
       fi
