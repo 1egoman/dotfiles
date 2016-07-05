@@ -54,7 +54,8 @@ alias amend="am"
 
 alias s="(git status > /dev/null 2>&1) && git status || ls -Al"
 alias ss="git status -s"
-alias l="git log --graph --all --pretty=format:'%C(yellow)%h%C(red)%d%Creset %s %C(green)- %an, %ar%Creset'"
+alias l="git log --graph --pretty=oneline --abbrev-commit --date=relative"
+alias ol="git log --graph --all --pretty=format:'%C(yellow)%h%C(red)%d%Creset %s %C(green)- %an, %ar%Creset'"
 alias ll="git log --stat --abbrev-commit"
 
 alias b="git branch"
