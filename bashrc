@@ -149,13 +149,6 @@ PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# lono info
-export LONO_DEV_URL="http://lono:T4gXgBqHqXP9TT@dev-cloud.scxml.io/api/v1/lono"
-export LONO_DEVICEID="34ffe3053257333936670457"
-export MDB="mongodb://lono:lono@ds061731.mongolab.com:61731/lonoapi"
-export PDB="postgres://uqdubfzxkyhiok:pvYPRHUg9qQyWrJV1c1v2yoIZg@ec2-107-21-114-132.compute-1.amazonaws.com:5432/d9iash2202aic"
-export SMAAS_URL='http://{modelName}.scxmldev.io:8002/api/v3'
-
 # wolfram info
 export WOLFRAM_APP_KEY="4W736E-Y82E88RJYQ"
 
