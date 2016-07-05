@@ -89,6 +89,7 @@ alias vrestart="vagrant halt && vagrant up && vagrant ssh"
 
 # make :q work like in vim
 alias :q="exit"
+alias :Q="exit"
 alias ,sb="source ~/.bashrc"
 
 # turn caps lock into another control.
