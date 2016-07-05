@@ -96,6 +96,8 @@ set textwidth=80
 let &colorcolumn=join(range(80,80),",")
 
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%120v.\+/
 
 " ------------------------------------------------------------------------------
 " Code Folding
@@ -168,7 +170,6 @@ augroup autocmds
   autocmd InsertLeave * :set relativenumber
   au FocusLost * :set number
   au FocusGained * :set relativenumber
-
 augroup end
 
 
