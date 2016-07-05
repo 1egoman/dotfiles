@@ -5,7 +5,8 @@
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" \
+            "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # colorize commands
 if [[ $(uname) == *"Linux"* ]]; then
@@ -118,7 +119,8 @@ alias o.="o ."
 #
 # λ ~/home/project (master)
 #
-# NOTE: You may have to configure your terminal to support UTF-8 Unicode (so λ will displayed correctly)
+# NOTE: You may have to configure your terminal to support UTF-8 Unicode
+# (so λ will displayed correctly)
 
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'

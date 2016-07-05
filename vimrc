@@ -87,17 +87,22 @@ syntax on " syntax highlighting
 " 256 color support
 let term=$TERM
 let colorterm=$COLORTERM
-if term == "xterm-256color" || term == "screen-256color" || term == "screen" || colorterm == "xfce4-terminal" || colorterm == "gnome-terminal"
+if term == "xterm-256color" ||
+  \term == "screen-256color" ||
+  \term == "screen" ||
+  \colorterm == "xfce4-terminal" ||
+  \colorterm == "gnome-terminal"
   set t_Co=256
 endif
 
 " draw a line at column 80
-set textwidth=80
-let &colorcolumn=join(range(80,80),",")
+set textwidth=100
+set tw=100
+let &colorcolumn=join(range(100,100),",")
 
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%120v.\+/
+match OverLength /\%100v.\+/
 
 " ------------------------------------------------------------------------------
 " Code Folding
@@ -123,8 +128,12 @@ autocmd BufWinEnter ?* silent loadview
 " ------------------------------------------------------------------------------
 
 " quickly source vimrc
-nnoremap <leader>ev :e ~/.vimrc<cr><C-w>l :sp ~/.vimrc.bundles<cr>
-nnoremap <leader>sv :!cp ~/setup/dotfiles/vimrc ~/.vimrc<cr>:!cp ~/setup/dotfiles/vimrc.bundles ~/.vimrc.bundles<cr>:source ~/.vimrc<cr>:echo "copied and sourced from ~/.vimrc and ~/.vimrc.bundles"<cr>
+nnoremap <leader>ev :e ~/.vimrc<cr><C-w>l
+        \:sp ~/.vimrc.bundles<cr>
+nnoremap <leader>sv :!cp ~/setup/dotfiles/vimrc ~/.vimrc<cr>
+        \:!cp ~/setup/dotfiles/vimrc.bundles ~/.vimrc.bundles<cr>
+        \:source ~/.vimrc<cr>
+        \:echo "copied and sourced from ~/.vimrc and ~/.vimrc.bundles"<cr>
 
 
 " ------------------------------------------------------------------------------
