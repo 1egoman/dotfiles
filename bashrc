@@ -53,10 +53,11 @@ alias cm="git commit -m"
 alias am="git commit --amend --reuse-message=HEAD"
 alias amend="am"
 
+alias sb="git submodule"
+
 alias s="(git status > /dev/null 2>&1) && git status || ls -Al"
 alias ss="git status -s"
-alias l="git log --graph --pretty=oneline --abbrev-commit --date=relative"
-alias ol="git log --graph --all --pretty=format:'%C(yellow)%h%C(red)%d%Creset %s %C(green)- %an, %ar%Creset'"
+alias l="git log --graph --all --pretty=format:'%C(yellow)%h%C(red)%d%Creset %s %C(green)- %an, %ar%Creset'"
 alias ll="git log --stat --abbrev-commit"
 
 alias b="git branch"
@@ -133,7 +134,9 @@ NO_COLOUR="\[\033[0m\]"
 GREEN="\[\033[1;32m\]"
 CYAN="\[\033[1;36m\]"
 
-if [[ "$(uname -n)" == *"desktop"* ]] || [[ "$(uname -n)" == *"laptop"* ]]; then
+if [[ "$(uname -n)" == *"desktop"* ]] || \
+   [[ "$(uname -n)" == *"laptop"* ]] || \
+   [[ "$(uname -n)" == *"MBP"* ]]; then
   GREEK="λ"
 elif [[ "$(uname -n)" == *"vagrant"* ]]; then
   GREEK="μ"
@@ -159,6 +162,12 @@ export ANDROID_HOME="$ANDROID_SDK"
 export ANDROID_PLATFORM_TOOLS="$ANDROID_SDK/platform-tools"
 export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_PLATFORM_TOOLS"
 
+# vim: disable special terminal mode that interprets ctrl-s and friends at the shell level
+# only for macs though
+if [[ "$(uname)" == "Darwin" ]]; then
+  stty -ixon
+fi
+
 # add go to the path
 export PATH=$PATH:/usr/local/go/bin
 
@@ -167,3 +176,6 @@ export PATH=$PATH:/usr/local/go/bin
 
 # source locals
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
+
+export NVM_DIR="/Users/ryan/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
