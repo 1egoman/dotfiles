@@ -15,6 +15,7 @@ Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'nathanaelkane/vim-indent-guides'
 
 Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 " Enable the list of buffers
 " let g:airline#extensions#tabline#enabled = 1
 

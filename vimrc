@@ -234,7 +234,7 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 cmap w!! w !sudo tee % >/dev/null
 
 " ctrl-s will save
-nnoremap <c-s> :w<CR>
+nnoremap <C-s> :w<CR>
 
 " Easy indent/outdent
 nnoremap <tab> >>
