@@ -94,7 +94,7 @@ alias :Q="exit"
 alias ,sb="source ~/.bashrc"
 
 # turn caps lock into another control.
-[[ -n $(which setxkbmap) ]] && setxkbmap -option ctrl:nocaps
+[[ -n $(which setxkbmap) ]] && [[ `uname -s` == "Linux" ]]&& setxkbmap -option ctrl:nocaps
 
 # ssh shortcuts
 alias sshcloud="ssh ubuntu@cloud.lono.io"
@@ -144,7 +144,12 @@ else
   GREEK="θ"
 fi
 
-PS1="\[\033[1;37m\]$GREEK $CYAN\w$YELLOW\$(parse_git_branch)$NO_COLOUR "
+# if biome is loaded, prepend with a space because formatting
+if [[ "$BIOME_PROJECT" ]]; then
+  BIOME_PROJECT=" $BIOME_PROJECT"
+fi
+
+PS1="\[\033[1;37m\]$GREEK $CYAN\w$GREEN$BIOME_PROJECT$YELLOW\$(parse_git_branch)$NO_COLOUR "
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 
 ### SUPPLEMENT PATH ###
@@ -152,8 +157,10 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # if stuck in caps lock, break out
-alias capsbreak="python -c 'from ctypes import *; X11 = cdll.LoadLibrary(\"libX11.so.6\"); display = X11.XOpenDisplay(None); X11.XkbLockModifiers(display, c_uint(0x0100), c_uint(2), c_uint(0)); X11.XCloseDisplay(display)'"
-alias CAPSBREAK="capsbreak"
+if [[ "uname -s" == "Linux" ]]; then
+  alias capsbreak="python -c 'from ctypes import *; X11 = cdll.LoadLibrary(\"libX11.so.6\"); display = X11.XOpenDisplay(None); X11.XkbLockModifiers(display, c_uint(0x0100), c_uint(2), c_uint(0)); X11.XCloseDisplay(display)'"
+  alias CAPSBREAK="capsbreak"
+fi
 
 # android sdk stuff
 export ANDROID_SDK="/home/`whoami`/android_sdk"
