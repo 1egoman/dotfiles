@@ -149,6 +149,7 @@ augroup autocmds
   autocmd BufNewFile,BufRead *.coffee set filetype=coffee
   autocmd BufNewFile,BufRead *.scss set filetype=scss
   autocmd BufRead,BufNewFile *.cson set filetype=coffee
+  autocmd BufRead,BufNewFile *.js set filetype=javascript.jsx
   autocmd BufRead,BufNewFile *.ex set syntax=elixir
   autocmd BufRead,BufNewFile *.exs set syntax=elixir
   autocmd BufRead,BufNewFile *.ejs set syntax=html

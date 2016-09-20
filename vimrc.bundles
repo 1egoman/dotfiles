@@ -54,6 +54,7 @@ Bundle 'kshenoy/vim-signature'
 " jsx syntax highlighting
 Plugin 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
 
 " bracket matching
 Bundle 'tpope/vim-unimpaired'

@@ -181,6 +181,17 @@ export PATH=$PATH:/usr/local/go/bin
 # add z command for jumping to a file
 [[ -f ~/.zsrc ]] && source ~/.zsrc
 
+# alias to connect to my local server over sshfs
+alias magnam-sshfs="sudo sshfs -o allow_other,defer_permissions ryan@magnam-server:/volumes/hdd0 /mnt"
+alias bluewhale-sshfs="sudo sshfs -o allow_other,defer_permissions root@bluewhale.local:/root/ /mnt"
+
+# alias for tmux
+alias ta="tmux attach -t"
+
+# virtualenv stuff
+export WORKON_HOME=~/virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
 # source locals
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
 
