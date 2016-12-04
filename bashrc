@@ -60,7 +60,7 @@ alias ss="git status -s"
 alias l="git log --graph --all --pretty=format:'%C(yellow)%h%C(red)%d%Creset %s %C(green)- %an, %ar%Creset'"
 alias ll="git log --stat --abbrev-commit"
 
-alias b="git branch"
+alias b="git branch -vv"
 alias c="git checkout"
 alias master="git checkout master"
 
@@ -145,12 +145,12 @@ else
 fi
 
 # if biome is loaded, prepend with a space because formatting
-if [[ "$BIOME_PROJECT" ]]; then
-  BIOME_PROJECT=" $BIOME_PROJECT"
-fi
+# if [[ "$BIOME_PROJECT" ]]; then
+#   BIOME_PROJECT=" $BIOME_PROJECT"
+# fi
 
-PS1="\[\033[1;37m\]$GREEK $CYAN\w$GREEN$BIOME_PROJECT$YELLOW\$(parse_git_branch)$NO_COLOUR "
-PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+PS1="\[\033[1;37m\]$GREEK $CYAN\w$GREEN$YELLOW\$(parse_git_branch)$NO_COLOUR "
+# PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 
 ### SUPPLEMENT PATH ###
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -184,6 +184,10 @@ export PATH=$PATH:/usr/local/go/bin
 # alias to connect to my local server over sshfs
 alias magnam-sshfs="sudo sshfs -o allow_other,defer_permissions ryan@magnam-server:/volumes/hdd0 /mnt"
 alias bluewhale-sshfs="sudo sshfs -o allow_other,defer_permissions root@bluewhale.local:/root/ /mnt"
+alias picoimx6-sshfs="sudo sshfs -o allow_other,defer_permissions root@192.168.1.236:/ /mnt"
+
+# alias to force unmount /mnt
+alias umnt="sudo diskutil umount force /mnt"
 
 # alias for tmux
 alias ta="tmux attach -t"
@@ -191,6 +195,13 @@ alias ta="tmux attach -t"
 # virtualenv stuff
 export WORKON_HOME=~/virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
+function frameworkpython {
+  if [[ ! -z "$VIRTUAL_ENV" ]]; then
+    PYTHONHOME=$VIRTUAL_ENV /usr/local/bin/python "$@"
+  else
+    /usr/local/bin/python "$@"
+  fi
+}
 
 # source locals
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
