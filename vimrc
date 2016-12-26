@@ -311,6 +311,9 @@ nnoremap <leader>k <C-a>
 " Make Y act like other capital letters
 nnoremap Y y$
 
+" Markdown checkbox toggling
+nnoremap <leader>c :ToggleCB<CR>
+
 " ------------------------------------------------------------------------------
 " Local config
 " ------------------------------------------------------------------------------

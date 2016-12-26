@@ -62,3 +62,6 @@ Bundle 'tpope/vim-unimpaired'
 " close html tags for me
 Bundle 'alvan/vim-closetag'
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.js,*.ejs"
+
+" Vim markdown toggle checkboxes
+Bundle 'jkramer/vim-checkbox'

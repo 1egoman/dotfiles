@@ -27,11 +27,11 @@ fi
 
 # vim alias
 # use nvim if at all possible
-if [[ -n $(which nvim) ]]; then
-  alias vi="nvim"
-else
-  alias vi="vim"
-fi
+#if [[ -n $(which nvim) ]]; then
+  #alias vi="nvim"
+#else
+alias vi="vim"
+#fi
 
 # go back to workspace
 alias ww="cd ~/w"
