@@ -59,9 +59,15 @@ let g:jsx_ext_required = 0
 " bracket matching
 Bundle 'tpope/vim-unimpaired'
 
+" RUst syntax highlighting
+Bundle 'rust-lang/rust.vim'
+
 " close html tags for me
 Bundle 'alvan/vim-closetag'
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.jsx,*.js,*.ejs"
 
 " Vim markdown toggle checkboxes
 Bundle 'jkramer/vim-checkbox'
+
+" Typescript syntax highlighting
+Bundle 'HerringtonDarkholme/yats.vim'

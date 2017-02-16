@@ -190,7 +190,16 @@ alias picoimx6-sshfs="sudo sshfs -o allow_other,defer_permissions root@192.168.1
 alias umnt="sudo diskutil umount force /mnt"
 
 # alias for tmux
+alias tn="tmux new -s"
 alias ta="tmux attach -t"
+
+# for working with rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# for working with elxir
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
+export SHELL_SESSION_HISTORY=0
 
 # virtualenv stuff
 export WORKON_HOME=~/virtualenvs

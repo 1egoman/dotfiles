@@ -153,6 +153,7 @@ augroup autocmds
   autocmd BufRead,BufNewFile *.ex set syntax=elixir
   autocmd BufRead,BufNewFile *.exs set syntax=elixir
   autocmd BufRead,BufNewFile *.ejs set syntax=html
+  autocmd BufRead,BufNewFile *.rs set syntax=rust
 
   " comments for elixir files
   autocmd BufRead,BufNewFile *.ex setlocal commentstring=#\ %s
@@ -269,12 +270,6 @@ nmap <leader>bl :ls<CR>
 
 " Find menu in current split, sp, snd vsp
 " set path=$PWD
-nnoremap fF :find .<cr>
-nnoremap fS :sfind .<cr>
-noremap fV :vert sfind .<cr>
-" nnoremap ff :find <C-R>=expand('%:h').'/.'<CR><cr>
-" nnoremap fs :sfind <C-R>=expand('%:h').'/.'<CR><cr>
-" nnoremap fv :vert sfind <C-R>=expand('%:h').'/.'<CR><cr>
 
 
 " ------------------------------------------------------------------------------
