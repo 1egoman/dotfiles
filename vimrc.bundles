@@ -71,3 +71,6 @@ Bundle 'jkramer/vim-checkbox'
 
 " Typescript syntax highlighting
 Bundle 'HerringtonDarkholme/yats.vim'
+
+" Graphql support
+Bundle "jparise/vim-graphql"

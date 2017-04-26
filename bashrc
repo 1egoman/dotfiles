@@ -193,8 +193,16 @@ alias umnt="sudo diskutil umount force /mnt"
 alias tn="tmux new -s"
 alias ta="tmux attach -t"
 
+# aliases for docker
+alias d="docker"
+alias dc="docker-compose"
+
 # for working with rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# for working with go
+export GOPATH="$HOME/w/go"
+export PATH="$PATH:$GOPATH/bin"
 
 # for working with elxir
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
@@ -211,6 +219,8 @@ function frameworkpython {
     /usr/local/bin/python "$@"
   fi
 }
+
+shopt -s cdspell
 
 # source locals
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
