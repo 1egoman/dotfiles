@@ -59,6 +59,7 @@ alias s="(git status > /dev/null 2>&1) && git status || ls -Al"
 alias ss="git status -s"
 alias l="git log --graph --all --pretty=format:'%C(yellow)%h%C(red)%d%Creset %s %C(green)- %an, %ar%Creset'"
 alias ll="git log --stat --abbrev-commit"
+alias lb="git log -p -M --follow --stat --"
 
 alias b="git branch -vv"
 alias c="git checkout"
@@ -174,6 +175,7 @@ export PATH="${PATH}:$ANDROID_HOME/tools:$ANDROID_PLATFORM_TOOLS"
 if [[ "$(uname)" == "Darwin" ]]; then
   stty -ixon
 fi
+export TERM=screen-256color # support 256 colors at the shell level
 
 # add go to the path
 export PATH=$PATH:/usr/local/go/bin
@@ -195,7 +197,8 @@ alias ta="tmux attach -t"
 
 # aliases for docker
 alias d="docker"
-alias dc="docker-compose"
+alias k="kubectl"
+alias dcc="docker-compose"
 
 # for working with rust
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -222,8 +225,12 @@ function frameworkpython {
 
 shopt -s cdspell
 
+# For create react app
+export REACT_EDITOR=vim
+
 # source locals
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
 
 export NVM_DIR="/Users/ryan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
