@@ -183,6 +183,9 @@ augroup autocmds
   au FocusGained * :set relativenumber
 augroup end
 
+" Remove autocmd set by default on macs
+delfunction <SNR>64_Highlight_Matching_Pair 
+autocmd! matchparen
 
 " ------------------------------------------------------------------------------
 " CTRL P
@@ -281,6 +284,7 @@ iab tommorow tomorrow
 iab lgo log
 iab requrie require
 iab cahnges changes
+iab functino function
 
 " ------------------------------------------------------------------------------
 " Toggles
