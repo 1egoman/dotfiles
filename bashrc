@@ -89,6 +89,10 @@ alias vsusp="vagrant suspend"
 alias vs="vagrant status"
 alias vrestart="vagrant halt && vagrant up && vagrant ssh"
 
+# clipboard aliases
+[ -z $(which pbcopy) ] && alias pbcopy="xsel -b -i"
+[ -z $(which pbpaste) ] && alias pbpaste="xsel -b -o"
+
 # make :q work like in vim
 alias :q="exit"
 alias :Q="exit"
@@ -156,6 +160,7 @@ PS1="\[\033[1;37m\]$GREEK $CYAN\w$GREEN$YELLOW\$(parse_git_branch)$NO_COLOUR "
 ### SUPPLEMENT PATH ###
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/bin"
 
 # if stuck in caps lock, break out
 if [[ "uname -s" == "Linux" ]]; then
@@ -231,6 +236,6 @@ export REACT_EDITOR=vim
 # source locals
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
 
-export NVM_DIR="/Users/ryan/.nvm"
+export NVM_DIR="/home/ryan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
