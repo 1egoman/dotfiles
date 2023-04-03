@@ -77,9 +77,8 @@ alias ra="git remote add"
 alias rr="git remote rm"
 
 # hub stuff
-alias clone="hub clone"
-alias pr="hub pull-request"
-alias repo="hub browse"
+alias clone="gh repo clone"
+alias repo="gh repo view"
 
 # other aliases
 alias v="vagrant"
@@ -217,17 +216,6 @@ test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
 export SHELL_SESSION_HISTORY=0
 
-# virtualenv stuff
-export WORKON_HOME=~/virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-function frameworkpython {
-  if [[ ! -z "$VIRTUAL_ENV" ]]; then
-    PYTHONHOME=$VIRTUAL_ENV /usr/local/bin/python "$@"
-  else
-    /usr/local/bin/python "$@"
-  fi
-}
-
 shopt -s cdspell
 
 # For create react app
@@ -236,7 +224,10 @@ export REACT_EDITOR=vim
 # source locals
 [[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
 
-export NVM_DIR="/home/ryan/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export VIMRUNTIME='/usr/share/vim/vim80/'
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export PATH="$PATH:/Users/ryan/.local/bin"
