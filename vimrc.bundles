@@ -11,6 +11,7 @@ Bundle 'vim-scripts/tComment'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-abolish'
 Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'nathanaelkane/vim-indent-guides'
 
